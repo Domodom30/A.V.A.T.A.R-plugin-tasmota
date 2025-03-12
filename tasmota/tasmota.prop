@@ -4,10 +4,10 @@
       "version": "1.0",
       "name": "tasmota",
       "settings": {
-        "active": true,
-        "username": "admin",
-        "password": "Qk9ibzJLcTlA",
-        "ipRange": "192.168.137"
+        "active": null,
+        "username": null,
+        "password": null,
+        "ipRange": null
       },
       "autoRules": {
         "description": "Do not remove! Automatic addition of rules by widget creation, automatic management"

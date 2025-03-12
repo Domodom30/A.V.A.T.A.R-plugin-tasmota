@@ -1,0 +1,16 @@
+{
+    "label": {
+        "title":"Paramétres du réseau Tasmota",
+        "username": "Utilisateur: ",
+        "password": "Mot de passe: ",
+        "range": "Plage réseau: ",
+        "authentification": "Active l'authentification",
+        "save":"Enregistrer",
+        "close":"Quitter",
+        "error":"une erreur c'est produite.",
+        "invalidip": "La plage d'adresse est invalide",
+        "errorauth":"Veuillez remplir les champs manquants",
+        "errorip":"Veuillez remplir le label plage réseau.",
+        "notifsave":"Les paramètres ont été sauvegardés"
+    }
+}

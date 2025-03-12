@@ -1,0 +1,16 @@
+{
+    "label": {
+        "title": "Tasmota Network Settings",
+        "username": "Username: ",
+        "password": "Password: ",
+        "range": "Network Range: ",
+        "authentification": "Enable Authentication",
+        "save": "Save",
+        "close": "Exit",
+        "error":"An error occurred.",
+        "invalidip": "The IP range is invalid",
+        "errorauth":"Please fill in the missing fields",
+        "errorip": "Please fill in the network range field.",
+        "notifsave":"The settings have been saved"
+    }
+}

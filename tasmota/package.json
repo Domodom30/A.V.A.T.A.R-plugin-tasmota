@@ -1,0 +1,12 @@
+{
+    "name": "tasmota",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "Plugin tasmota for A.V.A.T.A.R",
+    "repository": "https://github.com/Domodom30/A.V.A.T.A.R-plugin-tasmota",
+    "keywords": [
+        "tasmota"
+    ],
+    "author": "Eddy TELLIER",
+    "license": "mit"
+  }

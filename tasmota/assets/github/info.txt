@@ -1,19 +1,10 @@
-# Tasmota
+# Tasmota (SonOff)
 
-Displays Sonoff modules (connected devices)
+Display your Sonoff modules
 
-1. A configuration window will open
-2. Fill in the fields (the IP range is mandatory so that the plugin can search for your connected devices on your network).
-3. If your Sonoff modules require a login and password, enter them in the authentication section as well.
-4. The plugin will then scan for modules present on the network, and you will find them in Widget Studio.
+Quickly and easily create widgets for your Sonoff (Tasmota) connected devices.
 
 
-# Tasmota
+Afficher vos modules sonoff
 
-Affiche les modules sonoff (appareils connectés)
-
-
-1. Une fenêtre de configuation s'ouvre
-2. Renseignez les champs (la plage est obligatoire afin que le plugin recherche vos appareils connectés sur votre réseau)
-3. Dans le cas ou vos modules sonoff requiert un login et un mot de passe renseignez les également dans la partie authentification.
-4. Le plugin va alors scanner vos modules présent sur le réseau, et vous les retrouvez dans widget Studio
+Créér vos widgets rapidement et facilement de vos appareils connectés sonoff (Tasmota).

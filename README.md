@@ -28,5 +28,7 @@
 <div style="text-align: center;">
   <img src="./tasmota/assets/images/docs/ws-1.png" width="45%" />
 </div>
-
+<div style="text-align: center;">
+  <img src="./tasmota/assets/images/docs/ava.png" width="45%" />
+</div>
 <br><br><br>

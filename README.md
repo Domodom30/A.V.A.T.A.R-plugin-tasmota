@@ -8,7 +8,7 @@
 ![GitHub License](https://img.shields.io/github/license/Domodom30/A.V.A.T.A.R-plugin-tasmota)
 
 <div align-text:"center">
-<img src="./tasmota/assets/images/docs/ava-ia.png" width="350"/>  <img src="./tasmota/assets/images/docs/tasmota.png" width="350"/></div>
+<img src="./tasmota/assets/images/docs/ava-ia.png" width="400"/>  <img src="./tasmota/assets/images/docs/tasmota.png" width="400"/></div>
 
 ### ✨ Feature
 The Tasmota plugin is a widget manager for your Sonoff connected modules within the [A.V.A.T.A.R](https://github.com/Avatar-Home-Automation) framework.  
@@ -17,7 +17,7 @@ It will allow you to have widgets to control your devices.
 - Scan the network to find your Sonoff modules.
 - Access the list of your modules in `Widget Studio` and the `Tasmota` plugin.
 <div align-text:"center">
-  <img src="./tasmota/assets/images/docs/ws.png" width="350" alt="pluginStudio"/>  <img src="./tasmota/assets/images/docs/ws-1.png" width="350" alt="pluginStudio"/></div>
+  <img src="./tasmota/assets/images/docs/ws.png" width=400" alt="pluginStudio"/>  <img src="./tasmota/assets/images/docs/ws-1.png" width="400" alt="pluginStudio"/></div>
 
 
 ### ✨ New Feature

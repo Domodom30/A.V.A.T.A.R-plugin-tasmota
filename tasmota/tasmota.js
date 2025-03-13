@@ -10,15 +10,16 @@ import * as widgetLib from '../../../widgetLibrairy.js'
 const Widget = await widgetLib.init()
 
 // devices table
-let periphInfo = []
-let tasmotaWindow
-let Locale //language pak
+let periphInfo = [];
+let tasmotaWindow;
+let Locale; //language pak
+let currentwidgetState;
 
 const widgetFolder = path.resolve(__dirname, 'assets/widget')
 const widgetImgFolder = path.resolve(__dirname, 'assets/images/widget')
 
 export async function onClose(widgets) {
-  // Save widget positions
+
   if (Config.modules.tasmota.widget.display === true) {
     await Widget.initVar(
       path.resolve(__dirname, 'assets/widget'),
@@ -26,7 +27,6 @@ export async function onClose(widgets) {
       path.resolve(__dirname, 'lib/tasmota.js'),
       Config.modules.tasmota
     )
-
     if (widgets) await Widget.saveWidgets(widgets)
   }
 }
@@ -46,6 +46,7 @@ export async function init() {
 
   const rooms = await Avatar.APIFunctions.getPeriphRooms(devices)
   periphInfo = await Avatar.APIFunctions.classPeriphByRooms(rooms, devices)
+
 }
 
 export async function getWidgetsOnLoad() {
@@ -66,16 +67,25 @@ export async function getWidgetsOnLoad() {
 
 export async function readyToShow() {
   const { active, username, password, ipRange } = Config.modules.tasmota.settings
-  if(!ipRange) {
+  if (!ipRange) {
     openTasmotaWindow()
   }
   if (active && (!username || !password)) {
     openTasmotaWindow()
   }
+
+  // If a backup file exists
+  if (fs.existsSync(path.resolve(__dirname, 'assets', 'style.json'))) {
+		let prop = fs.readJsonSync(path.resolve(__dirname, 'assets', 'style.json'), { throws: false });
+		currentwidgetState = prop.start;
+		if (currentwidgetState) openTasmotaWindow();
+	} else 	
+		currentwidgetState = false;
+    Avatar.Interface.refreshWidgetInfo({plugin: 'tasmota', id: "555555"});
 }
 
 export async function getNewButtonState(arg) {
-  return
+  return currentwidgetState === true ? "Off" : "On";
 }
 
 export async function getPeriphInfo() {
@@ -84,21 +94,33 @@ export async function getPeriphInfo() {
 
   const rooms = await Avatar.APIFunctions.getPeriphRooms(devices)
   periphInfo = await Avatar.APIFunctions.classPeriphByRooms(rooms, devices)
-
+  
+  periphInfo.push({
+    Buttons: [
+      {
+        name: Locale.get("label.settings"),
+        value_type: 'button',
+        usage_name: 'Button',
+        periph_id: '555555',
+        notes: Locale.get("label.title")
+      }
+    ]
+  })
+  
   return periphInfo
 }
 
 export async function widgetAction(even) {
   if (even.type !== 'button') {
-    // Action for 'List of values' and 'float value' types
+
     await Widget.initVar(widgetFolder, widgetImgFolder, null, Config.modules.tasmota)
 
     return await Widget.widgetAction(even, periphInfo)
   } else {
-    // Action for 'button' type
 
-    // Do stuff
-    infoConsole(even.value)
+    currentwidgetState = even.value.action === 'On' ? true : false;
+    if (!tasmotaWindow && even.value.action === 'On') return openTasmotaWindow();
+      if (tasmotaWindow && even.value.action === 'Off') tasmotaWindow.destroy();
   }
 }
 
@@ -130,7 +152,7 @@ const openTasmotaWindow = async () => {
     alwaysOnTop: false,
     show: false,
     width: 420,
-    height: 255,
+    height: 470,
     opacity: 1,
     icon: path.resolve(__dirname, 'assets', 'images', 'tasmota.png'),
     webPreferences: {
@@ -138,6 +160,14 @@ const openTasmotaWindow = async () => {
     },
     title: 'Paramètres Tasmota'
   }
+
+  if (fs.existsSync(path.resolve(__dirname, 'assets', 'style.json'))) {
+    let prop = fs.readJsonSync(path.resolve(__dirname, 'assets', 'style.json'), { throws: false });
+    if (prop) {
+        style.x = prop.x;
+        style.y = prop.y;
+    }
+}
 
   tasmotaWindow = await Avatar.Interface.BrowserWindow(style, path.resolve(__dirname, 'html', 'settings.html'), false)
 
@@ -148,12 +178,13 @@ const openTasmotaWindow = async () => {
   })
 
   Avatar.Interface.ipcMain().on('tasmota-quit', () => {
-    tasmotaWindow.destroy()
+    tasmotaWindow.destroy();
+    Avatar.Interface.refreshWidgetInfo({plugin: 'tasmota', id: "555555"});
   })
 
   // Save Configuration
   Avatar.Interface.ipcMain().handle('tasmota-config', async (_event, arg) => {
-   return saveConfig(arg)
+    return saveConfig(arg)
   })
 
   // returns the localized message defined in arg
@@ -162,6 +193,7 @@ const openTasmotaWindow = async () => {
   })
 
   tasmotaWindow.on('closed', () => {
+    currentwidgetState = false;
     Avatar.Interface.ipcMain().removeHandler('tasmota-msg')
     Avatar.Interface.ipcMain().removeHandler('tasmota-config')
     Avatar.Interface.ipcMain().removeAllListeners('tasmota-quit')
@@ -171,43 +203,36 @@ const openTasmotaWindow = async () => {
 
 const saveConfig = configValue => {
   try {
-    // Déterminer le chemin absolu vers le fichier de configuration
-    const configPath = path.resolve(__dirname, 'tasmota.prop');
-    
-    // Lire la configuration existante ou créer un objet vide
-    let configProp = {};
+
+    const configPath = path.resolve(__dirname, 'tasmota.prop')
+
+    let configProp = {}
     if (fs.existsSync(configPath)) {
       try {
-        const fileContent = fs.readFileSync(configPath, 'utf8');
-        configProp = JSON.parse(fileContent);
+        const fileContent = fs.readFileSync(configPath, 'utf8')
+        configProp = JSON.parse(fileContent)
       } catch (parseError) {
-        console.error("Erreur lors de la lecture du fichier :", parseError.message);
-        // Continuer avec un objet vide plutôt que d'échouer
+        return error('Erreur lors de la lecture du fichier :', parseError.message)
       }
     }
-    
-    // Utiliser l'opérateur de coalescence nulle pour initialiser la structure
-    configProp.modules = configProp.modules ?? {};
-    configProp.modules.tasmota = configProp.modules.tasmota ?? {};
-    configProp.modules.tasmota.settings = configProp.modules.tasmota.settings ?? {};
-    
-    // Mettre à jour les paramètres
+
+    configProp.modules = configProp.modules ?? {}
+    configProp.modules.tasmota = configProp.modules.tasmota ?? {}
+    configProp.modules.tasmota.settings = configProp.modules.tasmota.settings ?? {}
+
     configProp.modules.tasmota.settings = {
       ...configProp.modules.tasmota.settings,
       active: configValue.authActive,
       username: configValue.username,
       password: configValue.password,
       ipRange: configValue.ipRange
-    };
-    
-    // Écrire la configuration mise à jour dans le fichier
-    fs.writeFileSync(configPath, JSON.stringify(configProp, null, 2));
-    
-    // Retourner true pour indiquer le succès
-    return true;
+    }
+
+    fs.writeFileSync(configPath, JSON.stringify(configProp, null, 2))
+
+    return true
   } catch (error) {
-    error("Erreur lors de la sauvegarde :", error.message);
-    // Retourner false en cas d'erreur
-    return false;
+    error('Erreur lors de la sauvegarde :', error.message)
+    return false
   }
-};
+}

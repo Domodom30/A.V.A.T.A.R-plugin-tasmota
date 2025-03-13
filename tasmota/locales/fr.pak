@@ -1,12 +1,16 @@
 {
     "label": {
-        "title":"Paramétres du réseau Tasmota",
+        "title":"Paramètres du réseau Tasmota",
+        "settings":"Paramètres",
         "username": "Utilisateur: ",
         "password": "Mot de passe: ",
         "range": "Plage réseau: ",
         "authentification": "Active l'authentification",
         "save":"Enregistrer",
         "close":"Quitter",
+        "placeusername": "Entrez votre login",
+        "placepassword": "Entrez votre mot de passe",
+        "placerange": "Ex: 192.168.137",
         "error":"une erreur c'est produite.",
         "invalidip": "La plage d'adresse est invalide",
         "errorauth":"Veuillez remplir les champs manquants",

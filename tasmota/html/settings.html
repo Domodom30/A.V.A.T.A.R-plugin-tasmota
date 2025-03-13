@@ -9,44 +9,56 @@
 
 <body>
 
+    <!-- Header -->
+    <header class="header">
+        <div id="title" class="logo"></div>
+    </header>
 
-    <h1 id="title"></h1>
-
+    <!-- Main Content -->
+    <main class="content">
+    <!-- Login Form -->
     <div class="container">
-
         <input type="checkbox" id="toggle-form">
         <label for="toggle-form" id="label-auth"></label>
-            
         
         <form id="login-form" style="display: none;">
             <div class="form-group">
                 <label for="username" id="label-username"></label>
-                <input type="text" id="username" placeholder="Entrez votre login">
+                <input type="text" id="username">
             </div>
 
             <div class="form-group password-group">
                 <label for="password" id="label-password"></label>
-                <input type="password" id="password" placeholder="Entrez votre mot de passe">
+                <input type="password" id="password">
                 <button type="button" id="toggle-password" class="password-toggle">👁️</button>
             </div>
-
         </form>
     </div>
+
     <div class="container">
         <div class="form-group">
             <label for="ip-range" id="label-range"></label>
-            <input type="text" id="ip-range" placeholder="Ex: 192.168.137" pattern="192\.168\.(25[0-4]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]|[0-9])">
+            <input type="text" id="ip-range" pattern="192\.168\.(25[0-4]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]|[0-9])">
         </div>
     </div>
-
-    <div class="buttons">
-        <button type="button" id="save-button" class="button-save"></button>
-        <button type="button" id="close-button" class="button-close"></button>
-    </div>
+    </main>
 
     <div class="notification-container">
         <div id="notification" class="notification hidden"></div>
     </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+
+        </div>
+        <div class="footer-buttons">
+            <button type="button" id="save-button" class="button button-save"></button>
+            <button type="button" id="close-button" class="button button-close"></button>
+        </div>
+    </footer>
+
+
+
 
     <script src="./settings-renderer.js"></script>
 </body>

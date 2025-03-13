@@ -4,7 +4,7 @@
       "version": "1.0",
       "name": "tasmota",
       "settings": {
-        "active": null,
+        "active": false,
         "username": null,
         "password": null,
         "ipRange": null

@@ -1,34 +1,42 @@
-# Tasmota
-<div style="text-align: center;">
-  <img src="./tasmota/assets/images/tasmota.png" width="5%" />
-  <div>Displays Sonoff modules (connected devices)</div>
-</div>
+# Plugin tasmota
 
+![image desc](./tasmota/assets/images/ico-tasmota.png)
 
+![GitHub repo size](https://img.shields.io/github/repo-size/Domodom30/A.V.A.T.A.R-plugin-tasmota)
+![GitHub Release](https://img.shields.io/badge/version-2.0.0-green)
+![GitHub Release Date](https://img.shields.io/badge/Release_Date-12_mars_2025-yellow)
+![GitHub License](https://img.shields.io/github/license/Domodom30/A.V.A.T.A.R-plugin-tasmota)
 
+<p align="center"><img src="./tasmota/assets/images/docs/ava-ia.png" width="300"/></p>
+<p align="center"><img src="./tasmota/assets/images/docs/tasmota.png" width="300"/></p>
 
-## Configuration
+### ✨ Feature
+The Tasmota plugin is a widget manager for your Sonoff connected modules within the [A.V.A.T.A.R](https://github.com/Avatar-Home-Automation) framework.  
+It will allow you to have widgets to control your devices.
 
-### After installing the plugin and launching the Avatar server 
+- Scan the network to find your Sonoff modules.
+- Access the list of your modules in `Widget Studio` and the `Tasmota` plugin.
 
-1. A configuration window will open
-   <div style="text-align: center;">
-  <img src="./tasmota/assets/images/docs/tasmota.png" width="45%" />
-</div>
-   <div style="text-align: center;">
-  <img src="./tasmota/assets/images/docs/window.png" width="45%" />
-</div>
-2. Fill in the fields (the IP range is mandatory so that the plugin can search for your connected devices on your network).
-3. If your Sonoff modules require a login and password, fill in those details in the authentication section as well.
-4. The plugin will then scan for modules present on your network, and you will find them in Widget Studio.
+<table style="width: 100%; table-layout: fixed;">
+  <tr>
+   <td style="text-align: center;">
+     <img src="./tasmota/assets/images/docs/ws.png" width="250" alt="pluginStudio"/><br>
+    </td>
+    <td style="text-align: center;">
+      <img src="./tasmota/assets/images/docs/ws-1.png" width="250" alt="pluginStudio"/><br>
+    </td>
+  </tr>
+</table>
 
-<div style="text-align: center;">
-  <img src="./tasmota/assets/images/docs/ws.png" width="45%" />
-</div>
-<div style="text-align: center;">
-  <img src="./tasmota/assets/images/docs/ws-1.png" width="45%" />
-</div>
-<div style="text-align: center;">
-  <img src="./tasmota/assets/images/docs/ava.png" width="45%" />
-</div>
-<br><br><br>
+### ✨ New Feature
+- Added a button widget to access the plugin configuration.
+
+## Installation
+
+Tasmota works on [Avatar Server](https://github.com/Avatar-Home-Automation) v5.0.0+.
+
+Installation:
+
+```sh
+1. Search the plugin `tasmota` in the A.V.A.T.A.R plugin library and click `install`.
+```

@@ -124,6 +124,10 @@ async function setTargets(config) {
   saveButton.innerHTML = await Lget('label.save')
   closeButton.innerHTML = await Lget('label.close')
 
+  usernameInput.setAttribute('placeholder', await Lget('label.placeusername'))
+  passwordInput.setAttribute('placeholder', await Lget('label.placepassword'))
+  ipRangeInput.setAttribute('placeholder', await Lget('label.placerange'))
+
   usernameInput.value = config.settings.username
   passwordInput.value = decrypt(config.settings.password)
   ipRangeInput.value = config.settings.ipRange

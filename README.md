@@ -17,7 +17,7 @@ It will allow you to have widgets to control your devices.
 - Scan the network to find your Sonoff modules.
 - Access the list of your modules in `Widget Studio` and the `Tasmota` plugin.
 
-<table style="width: 100%; table-layout: fixed;" cellspacing="0">
+<table style="width: 100%; table-layout: fixed;" border: 0>
   <tr>
    <td style="text-align: center;">
      <img src="./tasmota/assets/images/docs/ws.png" width="400" alt="pluginStudio"/><br>

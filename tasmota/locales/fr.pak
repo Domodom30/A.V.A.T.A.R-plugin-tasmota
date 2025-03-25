@@ -1,20 +1,34 @@
 {
-    "label": {
-        "title":"Paramètres du réseau Tasmota",
-        "settings":"Paramètres",
-        "username": "Utilisateur: ",
-        "password": "Mot de passe: ",
-        "range": "Plage réseau: ",
-        "authentification": "Active l'authentification",
-        "save":"Enregistrer",
-        "close":"Quitter",
-        "placeusername": "Entrez votre login",
-        "placepassword": "Entrez votre mot de passe",
-        "placerange": "Ex: 192.168.137",
-        "error":"une erreur c'est produite.",
-        "invalidip": "La plage d'adresse est invalide",
-        "errorauth":"Veuillez remplir les champs manquants",
-        "errorip":"Veuillez remplir le label plage réseau.",
-        "notifsave":"Les paramètres ont été sauvegardés"
-    }
+   "label": {
+      "title": "Paramètres du réseau Tasmota",
+      "settings": "Paramètres",
+      "username": "Utilisateur: ",
+      "password": "Mot de passe: ",
+      "ipserveur": "Adresse ip du serveur: ",
+      "range": "Plage réseau: ",
+      "authentification": "Active l'authentification",
+      "save": "Enregistrer",
+      "close": "Quitter",
+      "searchip": "Rechercher IP",
+      "placeusername": "Entrez votre login",
+      "placepassword": "Entrez votre mot de passe",
+      "placerange": "Ex: 192.168.137",
+      "error": "une erreur c'est produite.",
+      "invalidip": "La plage d'adresse est invalide",
+      "errorauth": "Champs manquants",
+      "errorip": "Remplissez la plage réseau.",
+      "notifsave": "Paramètres sauvegardés."
+   },
+   "error": {
+      "updateWidget": "Je n'ai pas pu mettre à jour les status des widgets"
+   },
+   "msg": {
+      "update": "Fichier tasmota.prop mis à jour.",
+      "noupdate": "Aucune mise à jour de tasmota.prop est nécessaire.",
+      "error": "Erreur lors de la mise à jour de tasmota.prop."
+   },
+   "speak": {
+      "lightOn": "$$ est maintenent allumé",
+      "lightOff": "$$ est maintenent éteint"
+   }
 }

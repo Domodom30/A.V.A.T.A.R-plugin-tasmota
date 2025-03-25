@@ -1,19 +1,25 @@
-# Tasmota
+# Tasmota v1.2.0  
 
-Displays Sonoff modules (connected devices)
+<div style="text-align: left; margin: 10px 0">  
+<img src="../../core/plugins/tasmota/assets/images/tasmota.png" width="40"/></div>  
 
-![tasmota](../assets/images/tasmota.png =150x*)
+### ✨ Feature  
+The Tasmota Widget Plugin allows you to easily control and display your Tasmota devices in [A.V.A.T.A.R](https://github.com/Avatar-Home-Automation).   
 
-## Configuration
+## Configuration  
 
-### After installing the plugin and launching the Avatar server
+1. A configuration window opens <div style="text-align: center;">  
+<img src="../../core/plugins/tasmota/assets/images/docs/window.png" width="180"/></div>   
+2. If your Sonoff devices require a username and password, fill in the authentication section.  
 
-1. A configuration window will open ![window](../assets/images/docs/window.png =150x*)
-2. Fill in the fields (the IP range is mandatory so that the plugin can search for your connected devices on your network).
-3. If your Sonoff modules require a login and password, enter them in the authentication section as well.
-4. The plugin will then scan for modules present on the network, and you will find them in Widget Studio.
+### After installing the plugin and starting the Avatar server  
 
-![ws](../assets/images/docs/ws.png =150x*) ![ws1](../assets/images/docs/ws-1.png =150x*)
+1. The plugin will scan your devices on the network.  
+2. Based on the module name and room name configured in your devices, the plugin will automatically update the rules in the prop file.  
+3. When transferring the plugin to clients, the widgets associated with each client's name will be visible.  
+4. On the server, all widgets can be accessed.  
 
+<div style="text-align: center;">  
+<img src="../../core/plugins/tasmota/assets/images/docs/ws.png" width="350"/><img src="../../core/plugins/tasmota/assets/images/docs/ws-1.png" width="350"/></div>  
 
 <br><br><br>

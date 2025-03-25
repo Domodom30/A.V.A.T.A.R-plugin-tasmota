@@ -1,20 +1,25 @@
 {
-    "label": {
-        "title": "Tasmota Network Settings",
-        "settings":"Settings",
-        "username": "Username: ",
-        "password": "Password: ",
-        "range": "Network Range: ",
-        "authentification": "Enable Authentication",
-        "save": "Save",
-        "close": "Exit",
-        "placeusername": "Enter your login",
-        "placepassword": "Enter your password",
-        "placerange": "Ex: 192.168.137",
-        "error":"An error occurred.",
-        "invalidip": "The IP range is invalid",
-        "errorauth":"Please fill in the missing fields",
-        "errorip": "Please fill in the network range field.",
-        "notifsave":"The settings have been saved"
-    }
+   "label": {
+      "title": "Tasmota Network Settings",
+      "settings": "Settings",
+      "username": "Username: ",
+      "password": "Password: ",
+      "ipserveur": "Ip server: ",
+      "range": "Network Range: ",
+      "authentification": "Enable Authentication",
+      "save": "Save",
+      "close": "Exit",
+      "searchip": "Search IP",
+      "placeusername": "Enter your login",
+      "placepassword": "Enter your password",
+      "placerange": "Ex: 192.168.137",
+      "error": "An error occurred.",
+      "invalidip": "The IP range is invalid",
+      "errorauth": "Please fill in the missing fields",
+      "errorip": "Please fill in the network range field.",
+      "notifsave": "The settings have been saved"
+   },
+   "error": {
+      "updateWidget": "I was not able to update the status of the widgets"
+   }
 }

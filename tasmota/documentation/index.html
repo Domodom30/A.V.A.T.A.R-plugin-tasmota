@@ -1,10 +1,104 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
-  </head>
-  <body>
-    <h1>tasmota documentation</h1>
-  </body>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Documentation du Plugin Tasmota</title>
+
+  <style>
+    body {
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      color: #f4f4f4;
+      background-color: #333;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #0062ca;
+    }
+
+    ul {
+      padding: 1px 0 0 10px;
+      line-height: 0.4;
+    }
+
+    code {
+      background: #eee;
+      color: #333;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    pre {
+      background: #eee;
+      padding: 2px 10px 2px 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>📘 Documentation - Plugin Tasmota (v1.2.0)</h2>
+  <p><strong>Repo :</strong> <a href="https://github.com/Domodom30/A.V.A.T.A.R-plugin-tasmota">GitHub</a></p>
+  <hr>
+  <div class="section">
+    <h3>🔧 Objectif</h3>
+    <p>Ce plugin permet de contrôler vos appareils <strong>Tasmota</strong> vocalement et via les widgets d'Avatar </p>
+  </div>
+
+  <div class="section">
+    <h3>⚙️ Lancement du plugin</h3>
+    <p>Lors de l'initialisation du plugin <strong>tasmota</strong> le réseau local est scanné, afin de recherché vos
+      modules comptatible <strong>tasmota</strong> </p>
+    <p>Vous trouverez la liste de vos périphériques classée par rooms dans widgets Studio</p>
+    <div><img src="./img/ws-1.png" alt="" width="440px"><img src="./img/ws-2.png" alt="" width="440px"></div>
+  </div>
+
+  <div class="section">
+    <h3>⚙️ Configuration de vos modules <strong>tasmota</strong></h3>
+    <pre><code>
+      <p>La configuration de vos périphériques <strong>tasmota</strong> doivent répondre à une configuration standardisée</p>
+      <img src="./img/config-tasmota.png" alt="" srcset="" width="240px">
+    </code></pre>
+    <pre><code>
+      <ul>
+        <li>1. Identifiant identiques
+        </li>
+        <li>2. Le champs [nom de l'appareil] <strong>lampe</strong><i>💡 nom de la pièce où se trouve votre module</i>
+        </li>
+        <li>3. Le champs [Surnom 1] <strong>salon</strong><i>💡 nom de la pièce où se trouve votre module</i>
+        </li>
+          <p>Si vos périphériques sont configurés avec un login et mot de passe, renseignez les informations de connections dans les paramètres du plugin <strong>tasmota</strong> sauvegardez et relancze le serveur A.V.A.T.A.R.
+          </p>
+          <img src="./img/ava-settings.png" alt="" srcset="" width="240px">
+      </ul>
+    </code></pre>
+
+  </div>
+  </div>
+
+  <div class="section">
+    <h3>💬 Vocalement</h3>
+    <pre><code>
+        <ul>
+          <li>Alumme la lumière <i> de la chambre [optionnel]</i></li>
+          <li>Eteint la lumière <i> du salon [optionnel]</i></li>
+
+          </ul>
+    </code></pre>
+  </div>
+
+
+</body>
+
 </html>

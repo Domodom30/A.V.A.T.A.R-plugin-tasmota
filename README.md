@@ -43,6 +43,14 @@ It will allow you to have widgets to control your devices.
 
 ---
 
+## :desktop_computer: Interface
+
+<div style="width:100%"; text-align="center">
+<p align="center"><img src="./tasmota/assets/images/docs/f-1.png" width="400"/></p>
+<p align="center"><img src="./tasmota/assets/images/docs/f-2.png" width="400"/></p>
+</div>
+---
+
 ## 🛠️ Installation
 
 ```bash

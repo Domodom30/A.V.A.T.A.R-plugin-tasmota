@@ -406,8 +406,9 @@ const updateWidgets = async (data) => {
       });
       return Avatar.Interface.refreshWidgetInfo({ plugin: 'tasmota', id: data.id });
    }
-   const srv = Config.modules.tasmota.settings.serveur;
-   const url = `${srv}:${Config.http.port}/avatar/tasmota?command=updateInfo&id=${data.id}`;
+      const srv = Config.modules.tasmota.settings.serveur;
+      const port = Config.modules.tasmota.settings.port;
+      const url = `http://${srv}:${port}/avatar/tasmota?command=updateInfo&id=${data.id}`;
    try {
       const response = await axios.get(url);
       if (response.status !== 200) {

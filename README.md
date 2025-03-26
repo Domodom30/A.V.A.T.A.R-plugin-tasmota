@@ -24,7 +24,6 @@ It will allow you to have widgets to control your devices.
 
 ## 🖼️ Paramètres
 
-<p align="center"><img src="./tasmota/assets/images/docs/ava.png" width="300"/></p>
 <p align="center"><img src="./tasmota/assets/images/docs/ava-ia.png" width="300"/></p>
 
 ---

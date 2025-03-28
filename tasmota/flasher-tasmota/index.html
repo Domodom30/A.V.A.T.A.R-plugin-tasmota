@@ -461,27 +461,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-utiliser-tasmota-web-installer" class="md-nav__link">
+  <a href="#1-tasmota-web-installer" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ 1. Utiliser tasmota Web installer
+      🛠️ 1. tasmota Web installer
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-utiliser-tasmotizer" class="md-nav__link">
+  <a href="#2-tasmotizer" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ 2. Utiliser Tasmotizer
+      🛠️ 2. Tasmotizer
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-utiliser-esptoolpy" class="md-nav__link">
+  <a href="#3-esptoolpy" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ 3. Utiliser esptool.py
+      🛠️ 3. esptool.py
     </span>
   </a>
   
@@ -712,19 +712,18 @@
 
 
   
-    <a href="https://github.com/Domodom30/A.V.A.T.A.R-plugin-tasmota/edit/master/docs/tasmota/flasher-tasmota.md" title="Editer cette page" class="md-content__button md-icon">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
-    </a>
-  
   
 
 
-<h1 id="flasher-un-module-sonoff-avec-tasmota">🔌 Flasher un module Sonoff avec Tasmota<a class="headerlink" href="#flasher-un-module-sonoff-avec-tasmota" title="Permanent link">&para;</a></h1>
-<p>Cette section vous guide étape par étape pour flasher un module <strong>Sonoff</strong> avec le firmware <strong>Tasmota</strong>.</p>
-<p>Vous avez 3 méthodes pour flasher vos modules sonoff, suivez la méthode qui vous convient le mieux.</p>
-<hr />
-<h2 id="prerequis">📦 Prérequis<a class="headerlink" href="#prerequis" title="Permanent link">&para;</a></h2>
+<h1 id="flasher-un-module-sonoff-avec-tasmota">🔌 Flasher un module Sonoff avec Tasmota</h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Cette section vous guide étape par étape pour flasher un module <strong>Sonoff</strong> avec le firmware <strong>Tasmota</strong>.
+  Vous avez 3 méthodes pour flasher vos modules sonoff, suivez la méthode qui vous convient le mieux.</p>
+</div>
+<h2 id="prerequis">📦 Prérequis</h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>Avant de commencer, assurez-vous d’avoir :</p>
 <ul>
 <li>Un module <strong>Sonoff</strong> (par ex. Basic, Mini, S26…)</li>
@@ -733,8 +732,8 @@
 <li>Un ordinateur avec <strong>Windows</strong>, <strong>Linux</strong> ou <strong>MacOS</strong></li>
 <li>Le logiciel <strong>Tasmotizer</strong> ou <strong>esptool</strong></li>
 </ul>
-<hr />
-<h2 id="1-utiliser-tasmota-web-installer">🛠️ 1. Utiliser tasmota Web installer<a class="headerlink" href="#1-utiliser-tasmota-web-installer" title="Permanent link">&para;</a></h2>
+</div>
+<h2 id="1-tasmota-web-installer">🛠️ 1. tasmota Web installer</h2>
 <ol>
 <li>
 <p><strong>Allez sur le site tasmota</strong> avec google chrome :
@@ -745,7 +744,7 @@
 </li>
 <li>Suivez les instructions</li>
 </ol>
-<h2 id="2-utiliser-tasmotizer">🛠️ 2. Utiliser Tasmotizer<a class="headerlink" href="#2-utiliser-tasmotizer" title="Permanent link">&para;</a></h2>
+<h2 id="2-tasmotizer">🛠️ 2. Tasmotizer</h2>
 <ol>
 <li>
 <p><strong>Téléchargez Tasmotizer</strong> :
@@ -772,12 +771,12 @@
 </li>
 </ol>
 <hr />
-<h2 id="3-utiliser-esptoolpy">🛠️ 3. Utiliser <code>esptool.py</code><a class="headerlink" href="#3-utiliser-esptoolpy" title="Permanent link">&para;</a></h2>
+<h2 id="3-esptoolpy">🛠️ 3. esptool.py</h2>
 <div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">esptool</span>
 <span class="n">esptool</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-port</span> <span class="n">COMx</span> <span class="n">erase_flash</span>
 <span class="n">esptool</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-port</span> <span class="n">COMx</span> <span class="n">write_flash</span> <span class="n">-fm</span> <span class="n">dout</span> <span class="n">0x0</span> <span class="n">tasmota</span><span class="p">.</span><span class="n">bin</span>
 </code></pre></div>
-<h2 id="ressources">📚 Ressources<a class="headerlink" href="#ressources" title="Permanent link">&para;</a></h2>
+<h2 id="ressources">📚 Ressources</h2>
 <p>Site officiel : <a href="https://tasmota.github.io/docs/">https://tasmota.github.io/docs/</a></p>
 <p>Firmwares tasmota : <a href="https://github.com/arendst/Tasmota/releases">https://github.com/arendst/Tasmota/releases</a></p>
 
@@ -810,6 +809,46 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Précédent: Accueil">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Accueil
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../settings-tasmota/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Paramétrer un module Sonoff">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                Paramétrer un module Sonoff
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -819,6 +858,11 @@
 
     </div>
   
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
   
 </div>
       
@@ -847,7 +891,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "toc.integrate", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>

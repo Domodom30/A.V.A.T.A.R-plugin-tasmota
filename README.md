@@ -1,53 +1,57 @@
-
 # 🔌 Plugin Tasmota pour A.V.A.T.A.R
+
 ![GitHub repo size](https://img.shields.io/github/repo-size/Domodom30/A.V.A.T.A.R-plugin-tasmota)
 ![GitHub Release](https://img.shields.io/badge/version-2.1.0-green)
 ![GitHub Release Date](https://img.shields.io/badge/Release_Date-26_mars_2025-yellow)
 
-
-This plugin allows you to interface **Tasmota** devices with the **A.V.A.T.A.R** platform.
+Ce plugin permet d'interfacer les périphériques **Tasmota** avec la plateforme **A.V.A.T.A.R**.
 
 ---
 
 ## 🧠 Fonctionnement
 
-The Tasmota Widget Plugin allows you to easily control and display your Tasmota devices in [A.V.A.T.A.R](https://github.com/Avatar-Home-Automation) framework.  
-It will allow you to have widgets to control your devices.
+Le plugin **Tasmota Widget** vous permet de contrôler et d'afficher facilement vos appareils Tasmota dans le framework [A.V.A.T.A.R](https://github.com/Avatar-Home-Automation).
 
-- Scan the network to find your Sonoff modules.
-- Automatic configuration of the prop file according to your modules
-- Access the list of your modules in `Widget Studio` and the `Tasmota` plugin.
-  
-##### 🗣️ Support multilingue
+### Il permet notamment :
+
+- 🔍 Scanner le réseau pour détecter vos modules **Sonoff**.
+- ⚙️ Configurer automatiquement le fichier `.prop` selon vos modules détectés.
+- 📋 Afficher la liste de vos modules dans le `Widget Studio`, via le plugin **Tasmota**.
+
+> 🗣️ *Support multilingue intégré*
 
 ---
 
 ## 🖼️ Paramètres
 
-<p align="center"><img src="./tasmota/assets/images/docs/ava.png" width="300"/></p>
-<p align="center"><img src="./tasmota/assets/images/docs/ava-ia.png" width="300"/></p>
+<p align="center">
+  <img src="./tasmota/assets/images/docs/ava-ia.png" width="300" alt="Paramètres AVA"/>
+</p>
 
 ---
 
-## 🧩 Widgets Studio
+## 🧩 Widget Studio
 
-<table style="width: 100%; table-layout: fixed;">
-  <tr>
-   <td style="text-align: center;">
-     <img src="./tasmota/assets/images/docs/ws-1.png" width="250" alt="pluginStudio"/><br>
-    </td>
-    <td style="text-align: center;">
-      <img src="./tasmota/assets/images/docs/ws-2.png" width="250" alt="pluginStudio"/><br>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="./tasmota/assets/images/docs/ws-1.png" width="250" alt="Widget Studio 1"/>
+  &nbsp;&nbsp;
+  <img src="./tasmota/assets/images/docs/ws-2.png" width="250" alt="Widget Studio 2"/>
+</p>
+
+---
+
+## 💻 Interface
+
+<p align="center">
+  <img src="./tasmota/assets/images/docs/f-1.png" width="400" alt="Interface 1"/>
+</p>
+<p align="center">
+  <img src="./tasmota/assets/images/docs/f-2.png" width="400" alt="Interface 2"/>
+</p>
 
 ---
 
 ## 🛠️ Installation
 
 ```bash
-Search the plugin `tasmota` in the A.V.A.T.A.R plugin library and click `install`.
-```
-
-
+Recherchez le plugin `tasmota` dans la bibliothèque de plugins A.V.A.T.A.R, puis cliquez sur `install`.

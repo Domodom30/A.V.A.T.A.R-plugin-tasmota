@@ -25,7 +25,7 @@ Le plugin **Tasmota Widget** vous permet de contrôler et d'afficher facilement 
 ## 🖼️ Paramètres
 
 <p align="center">
-  <img src="./tasmota/assets/images/docs/ava-ia.png" width="300" alt="Paramètres AVA"/>
+  <img src="./tasmota/documentation/assets/images/configs/ava-settings.png" width="300" alt="Paramètres AVA"/>
 </p>
 
 ---
@@ -33,9 +33,9 @@ Le plugin **Tasmota Widget** vous permet de contrôler et d'afficher facilement 
 ## 🧩 Widget Studio
 
 <p align="center">
-  <img src="./tasmota/assets/images/docs/ws-1.png" width="250" alt="Widget Studio 1"/>
+  <img src="./tasmota/documentation/assets/images/configs/ws-1.png" width="250" alt="Widget Studio 1"/>
   &nbsp;&nbsp;
-  <img src="./tasmota/assets/images/docs/ws-2.png" width="250" alt="Widget Studio 2"/>
+  <img src="./tasmota/documentation/assets/images/configs/ws-2.png" width="250" alt="Widget Studio 2"/>
 </p>
 
 ---
@@ -43,10 +43,10 @@ Le plugin **Tasmota Widget** vous permet de contrôler et d'afficher facilement 
 ## 💻 Interface
 
 <p align="center">
-  <img src="./tasmota/assets/images/docs/f-1.png" width="400" alt="Interface 1"/>
+  <img src="./tasmota/documentation/assets/images/configs/interface.png" width="400" alt="Interface 1"/>
 </p>
 <p align="center">
-  <img src="./tasmota/assets/images/docs/f-2.png" width="400" alt="Interface 2"/>
+  <img src="./tasmota/documentation/assets/images/configs/interface-2.png" width="400" alt="Interface 2"/>
 </p>
 
 ---

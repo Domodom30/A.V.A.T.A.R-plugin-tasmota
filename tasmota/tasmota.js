@@ -12,10 +12,9 @@ import * as widgetLib from '../../../widgetLibrairy.js';
 
 const Widget = await widgetLib.init();
 
-// devices table
 let periphInfo = [];
 let tasmotaWindow;
-let Locale; //language pak
+let Locale;
 let currentwidgetState;
 
 const widgetFolder = path.resolve(__dirname, 'assets/widget');
@@ -24,6 +23,7 @@ const apiTasmota = path.resolve(__dirname, './lib/tasmota.js');
 
 export async function onClose(widgets) {
    if (Config.modules.tasmota.widget.display === true) {
+      await Widget.initVar(widgetFolder, widgetImgFolder, apiTasmota, Config.modules.tasmota);
       if (widgets) await Widget.saveWidgets(widgets);
    }
 }
@@ -69,7 +69,6 @@ export async function init() {
 
 export async function action(data, callback) {
    try {
-      // Table of actions
       const tblActions = {
          set: () => {
             setTasmotaPeriph(data);
@@ -94,11 +93,10 @@ export async function action(data, callback) {
 }
 
 export async function getWidgetsOnLoad() {
-   // On charge les widgets au démarrage
    if (Config.modules.tasmota.widget.display === true) {
+      await Widget.initVar(widgetFolder, widgetImgFolder, apiTasmota, Config.modules.tasmota);
       let widgets = await Widget.getWidgets(widgetFolder);
-      let secondWidgets = []; // On prépare un tableau pour stocker les bons widgets
-
+      let secondWidgets = [];
       if (!Config.client) {
          return {
             plugin: 'tasmota',
@@ -114,13 +112,16 @@ export async function getWidgetsOnLoad() {
                if (res && res.room_name === Config.client) {
                   secondWidgets.push(widgets[i]);
                }
+               if (id == 555555) {
+                  secondWidgets.push(widgets[i]);
+               }
             } catch (error) {
-               console.error(`Erreur lors de la récupération des infos pour le widget ${id}`, error);
+               error(`Erreur lors de la récupération des infos pour le widget ${id}`, error.message);
             }
          }
          return {
             plugin: 'tasmota',
-            widgets: secondWidgets, // uniquement ceux filtrés
+            widgets: secondWidgets,
             Config: Config.modules.tasmota,
          };
       }
@@ -134,7 +135,6 @@ export async function readyToShow() {
       openTasmotaWindow();
    }
 
-   // If a backup file exists
    if (fs.existsSync(path.resolve(__dirname, 'assets', 'style.json'))) {
       let prop = fs.readJsonSync(path.resolve(__dirname, 'assets', 'style.json'), { throws: false });
       currentwidgetState = prop.start;
@@ -168,6 +168,8 @@ export async function getPeriphInfo() {
 }
 
 export async function widgetAction(even) {
+   const speakAction = Config.modules.tasmota.settings.speakAction;
+
    if (even.type !== 'button') {
       const devices = tasmotaAPI.getDeviceCache();
       const rooms = await Avatar.APIFunctions.getPeriphRooms(devices);
@@ -183,7 +185,27 @@ export async function widgetAction(even) {
       }
       even.action.remote = false;
 
-      updateWidgets(even);
+      try {
+         if (speakAction) {
+            const data_periph = await tasmotaAPI.getDeviceDirectInfos(even.id);
+
+            let tts = even.value == 1 ? await Locale.get(['speak.lightOn', data_periph.name]) : await Locale.get(['speak.lightOff', data_periph.name]);
+            let speakArgs;
+
+            if (typeof Avatar.getAllClients === 'function') {
+               const clients = Avatar.getAllClients();
+               let client = even.action.client === 'Serveur' ? clients[0] : even.action.client;
+               speakArgs = [tts, client, () => updateWidgets(even)];
+            } else {
+               speakArgs = [tts, () => updateWidgets(even)];
+            }
+            Avatar.speak(...speakArgs);
+         } else {
+            updateWidgets(even);
+         }
+      } catch (err) {
+         error('Error speakAction :', err.message);
+      }
 
       return await Widget.widgetAction(even, periphInfo);
    } else {
@@ -205,7 +227,6 @@ const openTasmotaWindow = async () => {
       const htmlPath = path.resolve(__dirname, 'html');
       const styleFile = path.join(assetsPath, 'style.json');
 
-      // Définition du style par défaut
       const style = {
          parent: mainWindow,
          frame: false,
@@ -214,17 +235,16 @@ const openTasmotaWindow = async () => {
          minimizable: false,
          alwaysOnTop: false,
          show: false,
-         width: 420,
-         height: 460,
+         width: 440,
+         height: 420,
          opacity: 1,
          icon: path.join(assetsPath, 'images', 'tasmota.png'),
          webPreferences: {
             preload: path.join(htmlPath, 'settings-preload.js'),
          },
-         title: 'Paramètres Tasmota',
+         title: await Locale.get('label.title'),
       };
 
-      // Si le fichier de style existe, on applique les coordonnées sauvegardées
       if (fs.existsSync(styleFile)) {
          const prop = fs.readJsonSync(styleFile, { throws: false });
          if (prop?.x != null && prop?.y != null) {
@@ -233,10 +253,7 @@ const openTasmotaWindow = async () => {
          }
       }
 
-      // Création de la fenêtre
       tasmotaWindow = await Avatar.Interface.BrowserWindow(style, path.join(htmlPath, 'settings.html'), false);
-
-      // Événement prêt à afficher
       tasmotaWindow.once('ready-to-show', () => {
          tasmotaWindow.show();
 
@@ -247,7 +264,6 @@ const openTasmotaWindow = async () => {
          }
       });
 
-      // Gestion des événements IPC
       const ipc = Avatar.Interface.ipcMain();
 
       const quitHandler = () => {
@@ -266,7 +282,6 @@ const openTasmotaWindow = async () => {
       ipc.handle('tasmota-localIP', configIP);
       ipc.handle('tasmota-msg', msgHandler);
 
-      // Nettoyage à la fermeture de la fenêtre
       tasmotaWindow.on('closed', () => {
          currentwidgetState = false;
 
@@ -277,9 +292,7 @@ const openTasmotaWindow = async () => {
 
          tasmotaWindow = null;
       });
-   } catch (error) {
-      console.error('❌ Erreur lors de l’ouverture de la fenêtre Tasmota:', error.message);
-   }
+   } catch (err) {}
 };
 
 const saveConfig = async (configValue) => {
@@ -291,13 +304,12 @@ const saveConfig = async (configValue) => {
          try {
             const fileContent = fs.readFileSync(configPath, 'utf8');
             configProp = JSON.parse(fileContent);
-         } catch (parseError) {
-            console.error('Erreur lors de la lecture du fichier :', parseError.message);
+         } catch (err) {
+            error('Erreur lors de la lecture du fichier :');
             return false;
          }
       }
 
-      // Mise à jour des paramètres dans la config
       configProp.modules = configProp.modules ?? {};
       configProp.modules.tasmota = configProp.modules.tasmota ?? {};
       configProp.modules.tasmota.settings = {
@@ -305,52 +317,19 @@ const saveConfig = async (configValue) => {
          active: configValue.authActive,
          username: configValue.username,
          password: configValue.password,
+         serveur: configValue.serveur,
+         port: configValue.port,
+         speakAction: configValue.speakAction,
       };
 
-      // Écriture de la configuration dans le fichier
       fs.writeFileSync(configPath, JSON.stringify(configProp, null, 2));
 
-      // Mettre à jour la configuration globale en mémoire
       Config.modules.tasmota.settings = { ...configProp.modules.tasmota.settings };
 
-      // Relancer l'init de la config dans tasmotaAPI
-      // tasmotaAPI.initVar(Config.modules.tasmota);
-
-      // Mise à jour des devices
-      await refreshDevices();
+      Avatar.Interface.showRestartBox({ title: 'Tasmota', detail: await Locale.get('msg.restart') });
 
       return true;
-   } catch (error) {
-      return false;
-   }
-};
-
-const refreshDevices = async () => {
-   try {
-      const devices = await tasmotaAPI.scanTasmotaDevices();
-      const rooms = await Avatar.APIFunctions.getPeriphRooms(devices);
-
-      periphInfo = await Avatar.APIFunctions.classPeriphByRooms(rooms, devices);
-
-      periphInfo.push({
-         Buttons: [
-            {
-               name: Locale.get('label.settings'),
-               value_type: 'button',
-               usage_name: 'Button',
-               periph_id: '555555',
-               notes: Locale.get('label.title'),
-            },
-         ],
-      });
-
-      // Si le widget Tasmota est activé, on met à jour ses données
-      if (Config.modules.tasmota.widget.display === true) {
-         Avatar.Interface.refreshWidgetInfo({ plugin: 'tasmota', id: '555555' });
-      }
-   } catch (error) {
-      return null;
-   }
+   } catch (err) {}
 };
 
 const setTasmotaPeriph = async (data) => {
@@ -384,9 +363,7 @@ const setTasmotaPeriph = async (data) => {
       data.action.remote = false;
 
       updateWidgets(data);
-   } catch (err) {
-      return error('Erreur dans setTasmotaPeriph:');
-   }
+   } catch (err) {}
 };
 
 const updateWidgets = async (data) => {
@@ -405,19 +382,18 @@ const updateWidgets = async (data) => {
          Avatar.clientPlugin(client, 'tasmota', payload);
       });
       return Avatar.Interface.refreshWidgetInfo({ plugin: 'tasmota', id: data.id });
-   }
+   } else {
       const srv = Config.modules.tasmota.settings.serveur;
       const port = Config.modules.tasmota.settings.port;
       const url = `http://${srv}:${port}/avatar/tasmota?command=updateInfo&id=${data.id}`;
-   try {
-      const response = await axios.get(url);
-      if (response.status !== 200) {
-         throw new Error('status ' + response.status);
-      }
+      try {
+         const response = await axios.get(url);
+         if (response.status !== 200) {
+            throw new Error('status ' + response.status);
+         }
 
-      return;
-   } catch (err) {
-      error('HTTP error:', err);
+         return;
+      } catch (err) {}
    }
 };
 

@@ -1,10 +1,12 @@
 {
    "label": {
-      "title": "Paramètres du réseau Tasmota",
+      "title": "Paramètres Tasmota",
       "settings": "Paramètres",
       "username": "Utilisateur: ",
       "password": "Mot de passe: ",
       "ipserveur": "Adresse ip du serveur: ",
+      "portserveur": "Port du serveur: ",
+      "speakWidget": "speak lors d'action sur un widget tasmota",
       "range": "Plage réseau: ",
       "authentification": "Active l'authentification",
       "save": "Enregistrer",

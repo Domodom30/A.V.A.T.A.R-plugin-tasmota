@@ -1,25 +1,36 @@
 {
    "label": {
-      "title": "Tasmota Network Settings",
+      "title": "Tasmota Settings",
       "settings": "Settings",
       "username": "Username: ",
       "password": "Password: ",
-      "ipserveur": "Ip server: ",
-      "range": "Network Range: ",
-      "authentification": "Enable Authentication",
+      "ipserveur": "Server IP address: ",
+      "portserveur": "Server port: ",
+      "speakWidget": "Speak when action is performed on a Tasmota widget",
+      "range": "Network range: ",
+      "authentification": "Enable authentication",
       "save": "Save",
       "close": "Exit",
       "searchip": "Search IP",
       "placeusername": "Enter your login",
       "placepassword": "Enter your password",
       "placerange": "Ex: 192.168.137",
-      "error": "An error occurred.",
-      "invalidip": "The IP range is invalid",
-      "errorauth": "Please fill in the missing fields",
-      "errorip": "Please fill in the network range field.",
-      "notifsave": "The settings have been saved"
+      "error": "An error has occurred.",
+      "invalidip": "The address range is invalid",
+      "errorauth": "Missing fields",
+      "errorip": "Fill in the network range.",
+      "notifsave": "Settings saved."
    },
    "error": {
-      "updateWidget": "I was not able to update the status of the widgets"
+      "updateWidget": "I couldn't update the widget statuses"
+   },
+   "msg": {
+      "update": "File tasmota.prop updated.",
+      "noupdate": "No update of tasmota.prop is necessary.",
+      "error": "Error while updating tasmota.prop."
+   },
+   "speak": {
+      "lightOn": "$$ is now turned on",
+      "lightOff": "$$ is now turned off"
    }
 }

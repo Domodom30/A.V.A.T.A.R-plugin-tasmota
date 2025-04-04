@@ -16,13 +16,26 @@ html {
 
 body {
    height: 100%;
-   font-family: 'Poppins', sans-serif;
+   font-family: 'Roboto', sans-serif;
    font-size: 12px;
+   font-weight: 400;
    background-color: #1a1a1a;
    color: white;
    display: flex;
    flex-direction: column;
    -webkit-app-region: drag;
+}
+
+h2 {
+   font-size: 1.2rem !important;
+}
+h3 {
+   font-size: 1.1rem !important;
+}
+h4 {
+   font-size: 12px !important;
+   margin-top: 20px !important;
+   margin-bottom: 10px !important;
 }
 
 main {
@@ -36,6 +49,18 @@ form {
    -webkit-app-region: no-drag;
 }
 
+x-label {
+   font-size: 12px !important;
+   padding-right: 5px !important;
+}
+x-box {
+   padding: 3px 0 !important;
+}
+x-input {
+   width: 350px !important;
+   font-size: 12px !important;
+}
+
 input[type='text'],
 input[type='password'] {
    width: 100%;
@@ -46,7 +71,7 @@ input[type='password'] {
    border-radius: 8px;
    background-color: #333;
    color: white;
-   font-family: 'Poppins', sans-serif;
+   font-family: 'Roboto', sans-serif;
    font-size: 12px;
    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
    transition: all 0.3s ease;
@@ -83,8 +108,8 @@ input::placeholder {
 }
 
 .logo {
-   font-size: 1.1em;
-   font-weight: bold;
+   font-size: 0.95em;
+   font-weight: 400;
    text-align: center;
 }
 
@@ -162,13 +187,14 @@ input::placeholder {
 .password-toggle {
    position: absolute;
    right: 10px;
-   top: 63%;
+   top: 50%;
    transform: translateY(-50%);
    background: none;
    border: none;
    cursor: pointer;
    font-size: 18px;
    color: #007bff;
+   z-index: 99;
 }
 
 .password-toggle:hover {
@@ -183,12 +209,12 @@ input::placeholder {
 }
 
 .button {
-   padding: 8px 20px;
+   padding: 5px 20px;
    border: none;
-   border-radius: 8px;
-   background-color: #0159b8;
+   border-radius: 5px;
+   background-color: #0159b8 !important;
    color: white;
-   font-family: 'Poppins', sans-serif;
+   font-family: 'Roboto', sans-serif;
    font-size: 12px;
    cursor: pointer;
    transition: all 0.3s ease;
@@ -200,12 +226,27 @@ input::placeholder {
    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.664);
 }
 
+.button-search {
+   margin-left: 5px !important;
+   padding: 3px 10px !important;
+   border: none;
+   border-radius: 5px;
+   background-color: #01a3b8 !important;
+   color: white;
+   font-family: 'Roboto', sans-serif;
+   font-size: 12px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
 .notification {
    padding: 5px;
    margin: 0 5px 2px 5px;
    border-radius: 2px;
    color: white;
    font-family: 'Roboto';
+   font-size: 12px;
    font-weight: 400;
    text-align: center;
    display: none;
@@ -216,9 +257,11 @@ input::placeholder {
 }
 
 .notification.error {
-   background-color: #e74c3c;
+   background-color: hsla(6, 78%, 57%, 0.596);
+   border: 1px solid hsl(6, 78%, 57%);
 }
 
 .notification.success {
-   background-color: #2ecc71;
+   background-color: hsla(145, 63%, 49%, 0.502);
+   border: 1px solid hsl(145, 63%, 49%);
 }

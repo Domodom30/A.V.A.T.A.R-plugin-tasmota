@@ -1,10 +1,11 @@
-// Sélection des éléments du DOM
 const title = document.querySelector('#title');
 const toggleFormCheckbox = document.querySelector('#toggle-form');
 const loginForm = document.querySelector('#login-form');
 const usernameInput = document.querySelector('#username');
 const passwordInput = document.querySelector('#password');
 const ipInput = document.querySelector('#ip-serveur');
+const portLabel = document.querySelector('#label-port-serveur');
+const portInput = document.querySelector('#port-serveur');
 const usernameLabel = document.querySelector('#label-username');
 const passwordLabel = document.querySelector('#label-password');
 const ipLabel = document.querySelector('#label-ip-serveur');
@@ -13,6 +14,8 @@ const saveButton = document.querySelector('#save-button');
 const closeButton = document.querySelector('#close-button');
 const togglePasswordButton = document.querySelector('#toggle-password');
 const searchIPButton = document.querySelector('#search-ip');
+const speakWidget = document.querySelector('#speak-widget');
+const speakWidgetLabel = document.querySelector('#label-speak-widget');
 
 window.onbeforeunload = async (e) => {
    e.returnValue = false;
@@ -26,15 +29,14 @@ const encrypt = function (password) {
 const decrypt = function (password) {
    return atob(password);
 };
-// Gestion du bouton pour basculer la visibilité du mot de passe
+
 togglePasswordButton.addEventListener('click', () => {
    const type = passwordInput.type === 'password' ? 'text' : 'password';
-   passwordInput.type = type; // Bascule entre 'password' et 'text'
+   passwordInput.type = type;
 });
 
-// Gestion de l'affichage du formulaire
-toggleFormCheckbox.addEventListener('change', () => {
-   if (toggleFormCheckbox.checked) {
+toggleFormCheckbox.addEventListener('toggle', () => {
+   if (toggleFormCheckbox.toggled) {
       loginForm.style.display = 'block';
    } else {
       loginForm.style.display = 'none';
@@ -46,13 +48,14 @@ searchIPButton.addEventListener('click', async () => {
    ipInput.value = result;
 });
 
-// Gestion de l'enregistrement des données
 saveButton.addEventListener('click', async () => {
    const username = usernameInput.value;
    const password = passwordInput.value;
    const ipserveur = ipInput.value;
+   const portserveur = portInput.value;
 
-   const isChecked = toggleFormCheckbox.checked;
+   const isChecked = toggleFormCheckbox.toggled;
+   const isCheckedSpeak = speakWidget.toggled;
 
    const encryptedPassword = encrypt(password);
 
@@ -61,6 +64,8 @@ saveButton.addEventListener('click', async () => {
       username: username,
       password: encryptedPassword,
       serveur: ipserveur,
+      port: portserveur,
+      speakAction: isCheckedSpeak,
    };
 
    if (isChecked && (!username || !password)) {
@@ -77,6 +82,9 @@ saveButton.addEventListener('click', async () => {
          authActive: isChecked,
          username: null,
          password: null,
+         serveur: ipserveur,
+         port: portserveur,
+         speakAction: isCheckedSpeak,
       };
    }
 
@@ -94,7 +102,6 @@ closeButton.addEventListener('click', () => {
    window.electronAPI.quit();
 });
 
-// Fonction pour afficher une notification
 const showNotification = function (message, type = 'error') {
    notification.textContent = message;
    notification.classList.remove('hidden', 'error', 'success');
@@ -112,6 +119,7 @@ async function setTargets(config) {
    usernameLabel.innerHTML = await Lget('label.username');
    passwordLabel.innerHTML = await Lget('label.password');
    ipLabel.innerHTML = await Lget('label.ipserveur');
+   portLabel.innerHTML = await Lget('label.portserveur');
    authLabel.innerHTML = await Lget('label.authentification');
    saveButton.innerHTML = await Lget('label.save');
    closeButton.innerHTML = await Lget('label.close');
@@ -120,12 +128,20 @@ async function setTargets(config) {
    usernameInput.setAttribute('placeholder', await Lget('label.placeusername'));
    passwordInput.setAttribute('placeholder', await Lget('label.placepassword'));
 
+   speakWidgetLabel.innerHTML = await Lget('label.speakWidget');
+
    usernameInput.value = config.settings.username;
    passwordInput.value = decrypt(config.settings.password);
+
+   portInput.value = config.settings.port;
+
    ipInput.value = config.settings.serveur;
    if (config.settings.active) {
-      toggleFormCheckbox.checked = true;
+      toggleFormCheckbox.toggled = true;
       loginForm.style.display = 'block';
+   }
+   if (config.settings.speakAction) {
+      speakWidget.toggled = true;
    }
 }
 

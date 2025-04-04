@@ -1,0 +1,135 @@
+/* Customisation élégante pour le thème Material */
+
+.md-header {
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+   background-color: #004e97;
+}
+
+.md-nav {
+   margin-top: 4px;
+}
+.md-tabs {
+   background-color: #004e97;
+   font-size: 0.75rem;
+}
+
+.md-tabs__link {
+   position: relative;
+   transition: all 0.1s ease;
+   border-radius: 4px;
+   padding: 7px 10px 7px 10px;
+   font-size: 0.6rem;
+   margin: 10px 0 0 0;
+}
+
+.md-tabs__link:hover {
+   background-color: rgba(255, 255, 255, 0.13);
+   box-shadow: 0 0 8px #004e97, 0 0 12px #004e97, 0 0 16px #004e97;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+   font-weight: 500;
+   color: #0b67bd;
+}
+
+.md-typeset h1 {
+   font-size: 1rem;
+   font-weight: 500;
+}
+
+.md-typeset h2 {
+   font-size: 0.85rem;
+   font-weight: 500;
+}
+
+.md-typeset h3 {
+   font-size: 0.75rem;
+   font-weight: 500;
+}
+
+.md-typeset {
+   text-shadow: 0 0 1px #004e97, 0 0 3px #004e97;
+}
+
+.md-typeset a {
+   color: #005fb8;
+}
+
+.md-typeset a:hover {
+   text-shadow: 0 0 4px #004e97, 0 0 6px #004e97;
+}
+
+.md-typeset {
+   font-size: 0.65rem;
+}
+
+blockquote {
+   background: #f1f1f1;
+   border-left: 4px solid #004e97;
+   padding: 0.5em 1em;
+   font-style: italic;
+}
+
+.md-nav__link {
+   position: relative;
+   transition: all 0.3s ease;
+   border-radius: 6px;
+   padding: 4px 8px;
+   font-size: 0.6rem;
+}
+
+.md-nav__link:hover {
+   box-shadow: 0 0 3px #004e97, 0 0 6px #004e97, 0 0 12px #004e97;
+   text-shadow: 0 0 1px #ffffff;
+   color: #fce76f !important;
+}
+
+.md-typeset ul {
+   list-style-type: square;
+   padding-left: 1.5em;
+}
+
+.md-typeset ul li::marker {
+   color: #004e97;
+}
+
+.md-typeset ul li {
+   text-shadow: 0 0 1px #004e97, 0 0 3px #004e97;
+}
+
+/* Search */
+
+.md-search__form {
+   border-radius: 0.5rem;
+   height: 1.5rem;
+   padding: 2px;
+}
+.md-search__form input {
+   font-size: 0.65rem;
+}
+
+.md-search__icon[for='__search'] {
+   position: absolute;
+   top: 0.3rem;
+   z-index: 2;
+}
+.md-icon svg {
+   fill: currentcolor;
+   display: block;
+   height: 1rem;
+   width: 1rem;
+}
+
+.md-footer__title {
+   font-size: 0.65rem;
+}
+
+.md-footer__direction {
+   display: none;
+}
+.md-footer__inner:not([hidden]) {
+   display: flex;
+   height: 3.5rem;
+}

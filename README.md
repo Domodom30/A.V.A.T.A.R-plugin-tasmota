@@ -1,8 +1,8 @@
 # 🔌 Plugin Tasmota pour A.V.A.T.A.R
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Domodom30/A.V.A.T.A.R-plugin-tasmota)
-![GitHub Release](https://img.shields.io/badge/version-2.1.0-green)
-![GitHub Release Date](https://img.shields.io/badge/Release_Date-26_mars_2025-yellow)
+![GitHub Release](https://img.shields.io/badge/version-2.3.0-green)
+![GitHub Release Date](https://img.shields.io/badge/Release_Date-03_mars_2025-yellow)
 
 Ce plugin permet d'interfacer les périphériques **Tasmota** avec la plateforme **A.V.A.T.A.R**.
 
@@ -50,6 +50,14 @@ Le plugin **Tasmota Widget** vous permet de contrôler et d'afficher facilement 
 </p>
 
 ---
+
+## ✨ Nouvelles Fonctionnalités
+
+- Ajout la possibilité de faire parler Avatar lors d'une action sur un widget tasmota.
+- Réglage du port serveur pour les updates widgets.
+- Ajout de l'icone settings sur les clients.
+- Lors de la modification des paramètres, demande a redémarrer.
+
 
 ## 🛠️ Installation
 

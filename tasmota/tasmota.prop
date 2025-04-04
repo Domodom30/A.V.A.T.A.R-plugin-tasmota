@@ -1,14 +1,15 @@
 {
   "modules": {
     "tasmota": {
-      "version": "2.1.0",
+      "version": "2.3.0",
       "name": "tasmota",
       "settings": {
-        "active": null,
-        "username": "",
-        "password": "",
-        "serveur": "",
-        "port": "3000"
+        "active": true,
+        "username": null,
+        "password": null,
+        "serveur": "192.168.137.42",
+        "port": 3000,
+        "speakAction": true
       },
       "autoRules": {
         "description": "Do not remove! Automatic addition of rules by widget creation, automatic management"

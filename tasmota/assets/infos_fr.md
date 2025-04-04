@@ -1,11 +1,18 @@
-# Tasmota v1.2.0
+# Tasmota v1.3.0
 
 <div style="text-align: left; margin: 10px 0">
 <img src="../../core/plugins/tasmota/assets/images/tasmota.png" width="40"/></div>
 
 
 ### ✨ Fonctionnalité
+
 Le plugin Widget Tasmota permet simplement de controler et d'afficher vos périphériques Tasmota [A.V.A.T.A.R](https://github.com/Avatar-Home-Automation).
+
+### ✨ Nouvelles Fonctionnalités
+
+- Ajout la possibilité de faire parler Avatar lors d'une action sur un widget tasmota.
+- Réglage du port serveur pour les updates widgets.
+- Ajout de l'icone settings sur les clients.
 
 ## Configuration
 

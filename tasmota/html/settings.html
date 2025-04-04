@@ -3,12 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' https://assets.afcdn.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com;">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+
+    <script src="../../../../node_modules/xel/xel.js" type="module"></script>
+    <meta name="xel-theme" content="../../../../node_modules/xel/themes/adwaita-dark.css">
+    <meta name="xel-accent-color" content="blue">
+    <meta name="xel-icons" content="">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-
     <!-- Header -->
     <header class="header">
         <div id="title" class="logo"></div>
@@ -18,35 +24,49 @@
     <main class="content">
         <!-- Login Form -->
         <div class="container">
-            <input type="checkbox" id="toggle-form">
-            <label for="toggle-form" id="label-auth"></label>
-
+            <x-switch id="toggle-form" size="small">
+                <x-label for="toggle-form" id="label-auth"></x-label>
+            </x-switch>
             <form id="login-form" style="display: none;">
-                <div class="form-group">
-                    <label for="username" id="label-username"></label>
-                    <input type="text" id="username">
-                </div>
+                <x-box>
+                    <x-label for="username" id="label-username" size="small"></x-label>
+                    <x-input type="text" id="username" size="small">
+                </x-box>
 
-                <div class="form-group password-group">
-                    <label for="password" id="label-password"></label>
-                    <input type="password" id="password">
-                    <button type="button" id="toggle-password" class="password-toggle">👁️</button>
-                </div>
+                <x-box>
+                    <x-label for="password" id="label-password" size="small"></x-label>
+                    <x-input type="password" id="password" size="small">
+                        <button type="button" id="toggle-password" class="password-toggle">👁️</button>
+                </x-box>
+
             </form>
         </div>
 
         <div class="container">
             <div class="form-group">
-                <label for="ip-serveur" id="label-ip-serveur"></label>
-                <input type="text" id="ip-serveur"
-                    pattern="^(25[0-5]|2[0-4][0-9]|1?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|1?[0-9]{1,2})){3}$"
-                    placeholder="ex: 192.168.1.45">
+                <x-box>
+                    <x-label for="ip-serveur" id="label-ip-serveur"></x-label>
+                    <x-input type="text" id="ip-serveur"
+                        pattern="^(25[0-5]|2[0-4][0-9]|1?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|1?[0-9]{1,2})){3}$"
+                        placeholder="192.168.1.45" size="small"></x-input>
+                    <x-button id="search-ip" class="button button-search" size="small"></x-button>
+                </x-box>
+                <x-box>
+                    <x-label for="port-serveur" id="label-port-serveur"></x-label>
+                    <x-numberinput type="text" id="port-serveur" placeholder="3000" size="small"><x-stepper></x-stepper>
+                    </x-numberinput>
+                </x-box>
             </div>
-            <button type="button" id="search-ip" class="button button-save"></button>
+
+        </div>
+        <div class="container">
+            <div class="form-group">
+                <x-switch id="speak-widget" size="small">
+                    <x-label id="label-speak-widget"></x-label>
+                </x-switch>
+            </div>
         </div>
     </main>
-
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -55,14 +75,10 @@
             </div>
         </div>
         <div class="footer-buttons">
-            <button type="button" id="save-button" class="button button-save"></button>
-            <button type="button" id="close-button" class="button button-close"></button>
+            <x-button id="save-button" class="button button-save"></x-button>
+            <x-button id="close-button" class="button button-close"></x-button>
         </div>
     </footer>
-
-
-
-
     <script src="./settings-renderer.js"></script>
 </body>
 

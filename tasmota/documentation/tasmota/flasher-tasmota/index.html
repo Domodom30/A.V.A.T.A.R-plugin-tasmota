@@ -10,26 +10,28 @@
         <meta name="author" content="Eddy TELLIER">
       
       
-        <link rel="canonical" href="https://Domodom30.github.io/A.V.A.T.A.R-plugin-tasmota/">
+        <link rel="canonical" href="https://Domodom30.github.io/A.V.A.T.A.R-plugin-tasmota/tasmota/flasher-tasmota/">
       
       
+        <link rel="prev" href="../../settings/">
       
-        <link rel="next" href="settings/">
+      
+        <link rel="next" href="../settings-tasmota/">
       
       
-      <link rel="icon" href="images/favicon.ico">
+      <link rel="icon" href="../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
-        <title>Plugin Tasmota</title>
+        <title>Flasher un module Sonoff - Plugin Tasmota</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="css/custom.css">
+      <link rel="stylesheet" href="../../css/custom.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#flasher-un-module-sonoff-avec-tasmota" class="md-skip">
           Aller au contenu
         </a>
       
@@ -90,9 +92,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="." title="Plugin Tasmota" class="md-header__button md-logo" aria-label="Plugin Tasmota" data-md-component="logo">
+    <a href="../.." title="Plugin Tasmota" class="md-header__button md-logo" aria-label="Plugin Tasmota" data-md-component="logo">
       
-  <img src="images/tasmota.png" alt="logo">
+  <img src="../../images/tasmota.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Accueil
+              Flasher un module Sonoff
             
           </span>
         </div>
@@ -214,11 +216,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -235,7 +235,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="settings/" class="md-tabs__link">
+      <a href="../../settings/" class="md-tabs__link">
         
   
     
@@ -250,11 +250,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="tasmota/flasher-tasmota/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   Tasmota
@@ -272,7 +274,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="vocale/" class="md-tabs__link">
+        <a href="../../vocale/" class="md-tabs__link">
           
   
   Vocale
@@ -290,7 +292,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="widgets/" class="md-tabs__link">
+        <a href="../../widgets/" class="md-tabs__link">
           
   
   Widgets
@@ -325,9 +327,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Plugin Tasmota" class="md-nav__button md-logo" aria-label="Plugin Tasmota" data-md-component="logo">
+    <a href="../.." title="Plugin Tasmota" class="md-nav__button md-logo" aria-label="Plugin Tasmota" data-md-component="logo">
       
-  <img src="images/tasmota.png" alt="logo">
+  <img src="../../images/tasmota.png" alt="logo">
 
     </a>
     Plugin Tasmota
@@ -351,19 +353,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -373,7 +366,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -385,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="settings/" class="md-nav__link">
+      <a href="../../settings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -403,25 +395,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -433,7 +428,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Tasmota
@@ -444,10 +439,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="tasmota/flasher-tasmota/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Flasher un module Sonoff
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -457,6 +473,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequis" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Prérequis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-tasmota-web-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ 1. tasmota Web installer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tasmotizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ 2. Tasmotizer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-esptoolpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ 3. esptool.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ressources" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Ressources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -469,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tasmota/settings-tasmota/" class="md-nav__link">
+      <a href="../settings-tasmota/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -491,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tasmota/settings-plugin/" class="md-nav__link">
+      <a href="../settings-plugin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -561,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vocale/" class="md-nav__link">
+      <a href="../../vocale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -631,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="widgets/" class="md-nav__link">
+      <a href="../../widgets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -672,20 +753,70 @@
   
 
 
-<h1 id="introduction">✅ Introduction</h1>
+<h1 id="flasher-un-module-sonoff-avec-tasmota">🔌 Flasher un module Sonoff avec Tasmota</h1>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Le plugin tasmota permet de contrôler et de visualiser vos modules sonoff qui tournent avec un firmware tasmota</p>
+<p>Cette section vous guide étape par étape pour flasher un module <strong>Sonoff</strong> avec le firmware <strong>Tasmota</strong>.
+  Vous avez 3 méthodes pour flasher vos modules sonoff, suivez la méthode qui vous convient le mieux.</p>
 </div>
-<p><img alt="interface" src="images/configs/interface.png" /></p>
+<h2 id="prerequis">📦 Prérequis</h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
+<p>Avant de commencer, assurez-vous d’avoir :</p>
 <ul>
-<li>Contrôler vos périphériques sonoff (tasmota) vocalement et via les widgets.</li>
-<li>Visualiser rapidement l'état de vos périphériques grace aux widgets d'A.V.A.T.A.R</li>
+<li>Un module <strong>Sonoff</strong> (par ex. Basic, Mini, S26…)</li>
+<li>Un <strong>convertisseur USB vers série (UART)</strong> – 3.3V !</li>
+<li>Des <strong>câbles Dupont</strong></li>
+<li>Un ordinateur avec <strong>Windows</strong>, <strong>Linux</strong> ou <strong>MacOS</strong></li>
+<li>Le logiciel <strong>Tasmotizer</strong> ou <strong>esptool</strong></li>
 </ul>
 </div>
-<p><img alt="interface" src="images/configs/interface-2.png" /></p>
+<h2 id="1-tasmota-web-installer">🛠️ 1. tasmota Web installer</h2>
+<ol>
+<li>
+<p><strong>Allez sur le site tasmota</strong> avec google chrome :
+   👉 <a href="https://tasmota.github.io/install/">https://tasmota.github.io</a></p>
+</li>
+<li>
+<p>Sélectionnez la version du firmware souhaité</p>
+</li>
+<li>Suivez les instructions</li>
+</ol>
+<h2 id="2-tasmotizer">🛠️ 2. Tasmotizer</h2>
+<ol>
+<li>
+<p><strong>Téléchargez Tasmotizer</strong> :
+   👉 <a href="https://github.com/tasmota/tasmotizer">https://github.com/tasmota/tasmotizer</a></p>
+</li>
+<li>
+<p><strong>Branchez le module Sonoff</strong> en mode flash :</p>
+</li>
+<li>Maintenez le bouton enfoncé tout en connectant le GND</li>
+<li>
+<p>Connectez les fils :</p>
+<ul>
+<li>TX ↔ RX</li>
+<li>RX ↔ TX</li>
+<li>GND ↔ GND</li>
+<li>3.3V ↔ 3.3V (<strong>jamais en 5V</strong> !)</li>
+</ul>
+</li>
+<li>
+<p><strong>Choisissez le firmware Tasmota</strong> (<code>.bin</code>) ou laissez celui proposé</p>
+</li>
+<li>
+<p>Cliquez sur <strong>“Tasmotize!”</strong></p>
+</li>
+</ol>
+<hr />
+<h2 id="3-esptoolpy">🛠️ 3. esptool.py</h2>
+<div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">esptool</span>
+<span class="n">esptool</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-port</span> <span class="n">COMx</span> <span class="n">erase_flash</span>
+<span class="n">esptool</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-port</span> <span class="n">COMx</span> <span class="n">write_flash</span> <span class="n">-fm</span> <span class="n">dout</span> <span class="n">0x0</span> <span class="n">tasmota</span><span class="p">.</span><span class="n">bin</span>
+</code></pre></div>
+<h2 id="ressources">📚 Ressources</h2>
+<p>Site officiel : <a href="https://tasmota.github.io/docs/">https://tasmota.github.io/docs/</a></p>
+<p>Firmwares tasmota : <a href="https://github.com/arendst/Tasmota/releases">https://github.com/arendst/Tasmota/releases</a></p>
 
 
 
@@ -720,15 +851,31 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
         
+          
+          <a href="../../settings/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Paramètres">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Paramètres
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="settings/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Paramètres">
+          <a href="../settings-tasmota/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Paramétrer un module Sonoff">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Suivant
               </span>
               <div class="md-ellipsis">
-                Paramètres
+                Paramétrer un module Sonoff
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -782,10 +929,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.expand", "toc.integrate", "navigation.top", "navigation.footer"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "toc.integrate", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>

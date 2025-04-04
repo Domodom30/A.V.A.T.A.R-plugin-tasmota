@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://Domodom30.github.io/A.V.A.T.A.R-plugin-tasmota/</loc>
-         <lastmod>2025-03-28</lastmod>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://Domodom30.github.io/A.V.A.T.A.R-plugin-tasmota/settings/</loc>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://Domodom30.github.io/A.V.A.T.A.R-plugin-tasmota/tasmota/flasher-tasmota/</loc>
-         <lastmod>2025-03-28</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://Domodom30.github.io/A.V.A.T.A.R-plugin-tasmota/tasmota/settings-plugin/</loc>
-         <lastmod>2025-03-28</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://Domodom30.github.io/A.V.A.T.A.R-plugin-tasmota/tasmota/settings-tasmota/</loc>
-         <lastmod>2025-03-28</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://Domodom30.github.io/A.V.A.T.A.R-plugin-tasmota/vocale/</loc>
-         <lastmod>2025-03-28</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://Domodom30.github.io/A.V.A.T.A.R-plugin-tasmota/widgets/</loc>
-         <lastmod>2025-03-28</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
 </urlset>
